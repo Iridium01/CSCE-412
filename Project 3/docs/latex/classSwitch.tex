@@ -1,0 +1,158 @@
+\hypertarget{classSwitch}{}\doxysection{Switch Class Reference}
+\label{classSwitch}\index{Switch@{Switch}}
+
+
+Routes requests to appropriate load balancers and manages their operations.  
+
+
+
+
+{\ttfamily \#include $<$Switch.\+h$>$}
+
+
+
+Collaboration diagram for Switch\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classSwitch__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSwitch_ab3db11ceb47aba5dac17d73cbc5eacd9}{Switch}} (const std\+::string \&streaming\+\_\+id, int streaming\+\_\+servers, const std\+::string \&processing\+\_\+id, int processing\+\_\+servers)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classSwitch}{Switch}} with two load balancers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSwitch_a55fdbed6df62affce015804a9f99cbca}{route\+\_\+request}} (const \mbox{\hyperlink{structRequest}{Request}} \&req, int clock\+\_\+cycle)
+\begin{DoxyCompactList}\small\item\em Routes a request to the appropriate load balancer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSwitch_af7607d871a8352796db4cd337e352d81}{tick}} (int clock\+\_\+cycle)
+\begin{DoxyCompactList}\small\item\em Advances the simulation by one clock cycle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSwitch_a0d96fb313a5fce0f56ecfb86f70c518f}{update\+\_\+stats}} ()
+\begin{DoxyCompactList}\small\item\em Print statistics for both load balancers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSwitch_a30b441a3c39ba5d9f94b59bb090dd81c}{block\+\_\+ip}} (const std\+::string \&ip, int clock\+\_\+cycle)
+\begin{DoxyCompactList}\small\item\em Blocks an IP address in both load balancers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} \mbox{\hyperlink{classSwitch_a90c4530a271bca24746c2ba1f34b57af}{streaming\+\_\+lb}}
+\begin{DoxyCompactList}\small\item\em Load balancer for streaming jobs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} \mbox{\hyperlink{classSwitch_af154769eaa102f9d540838bca7ab433d}{processing\+\_\+lb}}
+\begin{DoxyCompactList}\small\item\em Load balancer for processing jobs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Routes requests to appropriate load balancers and manages their operations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSwitch_ab3db11ceb47aba5dac17d73cbc5eacd9}\label{classSwitch_ab3db11ceb47aba5dac17d73cbc5eacd9}} 
+\index{Switch@{Switch}!Switch@{Switch}}
+\index{Switch@{Switch}!Switch@{Switch}}
+\doxysubsubsection{\texorpdfstring{Switch()}{Switch()}}
+{\footnotesize\ttfamily Switch\+::\+Switch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{streaming\+\_\+id,  }\item[{int}]{streaming\+\_\+servers,  }\item[{const std\+::string \&}]{processing\+\_\+id,  }\item[{int}]{processing\+\_\+servers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classSwitch}{Switch}} with two load balancers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em streaming\+\_\+id} & ID for the streaming load balancer. \\
+\hline
+{\em streaming\+\_\+servers} & Initial number of servers for the streaming load balancer. \\
+\hline
+{\em processing\+\_\+id} & ID for the processing load balancer. \\
+\hline
+{\em processing\+\_\+servers} & Initial number of servers for the processing load balancer. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSwitch_a30b441a3c39ba5d9f94b59bb090dd81c}\label{classSwitch_a30b441a3c39ba5d9f94b59bb090dd81c}} 
+\index{Switch@{Switch}!block\_ip@{block\_ip}}
+\index{block\_ip@{block\_ip}!Switch@{Switch}}
+\doxysubsubsection{\texorpdfstring{block\_ip()}{block\_ip()}}
+{\footnotesize\ttfamily void Switch\+::block\+\_\+ip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip,  }\item[{int}]{clock\+\_\+cycle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Blocks an IP address in both load balancers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & The IP address to block. \\
+\hline
+{\em clock\+\_\+cycle} & The current clock cycle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSwitch_a55fdbed6df62affce015804a9f99cbca}\label{classSwitch_a55fdbed6df62affce015804a9f99cbca}} 
+\index{Switch@{Switch}!route\_request@{route\_request}}
+\index{route\_request@{route\_request}!Switch@{Switch}}
+\doxysubsubsection{\texorpdfstring{route\_request()}{route\_request()}}
+{\footnotesize\ttfamily void Switch\+::route\+\_\+request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structRequest}{Request}} \&}]{req,  }\item[{int}]{clock\+\_\+cycle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Routes a request to the appropriate load balancer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & The request to route. \\
+\hline
+{\em clock\+\_\+cycle} & The current clock cycle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSwitch_af7607d871a8352796db4cd337e352d81}\label{classSwitch_af7607d871a8352796db4cd337e352d81}} 
+\index{Switch@{Switch}!tick@{tick}}
+\index{tick@{tick}!Switch@{Switch}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void Switch\+::tick (\begin{DoxyParamCaption}\item[{int}]{clock\+\_\+cycle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Advances the simulation by one clock cycle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock\+\_\+cycle} & The current clock cycle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSwitch_a0d96fb313a5fce0f56ecfb86f70c518f}\label{classSwitch_a0d96fb313a5fce0f56ecfb86f70c518f}} 
+\index{Switch@{Switch}!update\_stats@{update\_stats}}
+\index{update\_stats@{update\_stats}!Switch@{Switch}}
+\doxysubsubsection{\texorpdfstring{update\_stats()}{update\_stats()}}
+{\footnotesize\ttfamily void Switch\+::update\+\_\+stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Print statistics for both load balancers. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSwitch_af154769eaa102f9d540838bca7ab433d}\label{classSwitch_af154769eaa102f9d540838bca7ab433d}} 
+\index{Switch@{Switch}!processing\_lb@{processing\_lb}}
+\index{processing\_lb@{processing\_lb}!Switch@{Switch}}
+\doxysubsubsection{\texorpdfstring{processing\_lb}{processing\_lb}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} Switch\+::processing\+\_\+lb\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Load balancer for processing jobs. 
+
+\mbox{\Hypertarget{classSwitch_a90c4530a271bca24746c2ba1f34b57af}\label{classSwitch_a90c4530a271bca24746c2ba1f34b57af}} 
+\index{Switch@{Switch}!streaming\_lb@{streaming\_lb}}
+\index{streaming\_lb@{streaming\_lb}!Switch@{Switch}}
+\doxysubsubsection{\texorpdfstring{streaming\_lb}{streaming\_lb}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} Switch\+::streaming\+\_\+lb\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Load balancer for streaming jobs. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Switch_8h}{Switch.\+h}}\end{DoxyCompactItemize}

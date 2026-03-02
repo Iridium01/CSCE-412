@@ -1,0 +1,102 @@
+\hypertarget{classmINI_1_1INIWriter}{}\doxysection{m\+INI\+::INIWriter Class Reference}
+\label{classmINI_1_1INIWriter}\index{mINI::INIWriter@{mINI::INIWriter}}
+
+
+{\ttfamily \#include $<$ini.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmINI_1_1INIWriter_af78c70976306d9a42eb2a655aee198f8}{INIWriter}} (std\+::filesystem\+::path \mbox{\hyperlink{classmINI_1_1INIWriter_a0bc4e1eb7dc16b04b0801c0f77a78db1}{filename}})
+\item 
+\mbox{\hyperlink{classmINI_1_1INIWriter_aede2dde9ed8ca7c3c823fc8f1ce22dfe}{$\sim$\+INIWriter}} ()=default
+\item 
+bool \mbox{\hyperlink{classmINI_1_1INIWriter_a7183dcd6388af073deb84afd80f1c0c1}{operator$<$$<$}} (\mbox{\hyperlink{namespacemINI_a7ebad9b80453aa82944eb63fb2782a9d}{INIStructure}} \&data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classmINI_1_1INIWriter_a0ba92158dd3eaaf671252accfedab8b1}{pretty\+Print}} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classmINI_1_1INIWriter_a4aab037d27eee30be7a1e9b70a9eefe1}{T\+\_\+\+Line\+Data}} = std\+::vector$<$ std\+::string $>$
+\item 
+using \mbox{\hyperlink{classmINI_1_1INIWriter_a687d992f97a67e109c4105ffcd4bb6a8}{T\+\_\+\+Line\+Data\+Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classmINI_1_1INIWriter_a4aab037d27eee30be7a1e9b70a9eefe1}{T\+\_\+\+Line\+Data}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmINI_1_1INIWriter_a4aab037d27eee30be7a1e9b70a9eefe1}{T\+\_\+\+Line\+Data}} \mbox{\hyperlink{classmINI_1_1INIWriter_af07ebb6a204244c2d9750ec7840d8129}{get\+Lazy\+Output}} (\mbox{\hyperlink{classmINI_1_1INIWriter_a687d992f97a67e109c4105ffcd4bb6a8}{T\+\_\+\+Line\+Data\+Ptr}} const \&line\+Data, \mbox{\hyperlink{namespacemINI_a7ebad9b80453aa82944eb63fb2782a9d}{INIStructure}} \&data, \mbox{\hyperlink{namespacemINI_a7ebad9b80453aa82944eb63fb2782a9d}{INIStructure}} \&original) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::filesystem\+::path \mbox{\hyperlink{classmINI_1_1INIWriter_a0bc4e1eb7dc16b04b0801c0f77a78db1}{filename}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classmINI_1_1INIWriter_a4aab037d27eee30be7a1e9b70a9eefe1}\label{classmINI_1_1INIWriter_a4aab037d27eee30be7a1e9b70a9eefe1}} 
+\index{mINI::INIWriter@{mINI::INIWriter}!T\_LineData@{T\_LineData}}
+\index{T\_LineData@{T\_LineData}!mINI::INIWriter@{mINI::INIWriter}}
+\doxysubsubsection{\texorpdfstring{T\_LineData}{T\_LineData}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classmINI_1_1INIWriter_a4aab037d27eee30be7a1e9b70a9eefe1}{m\+INI\+::\+INIWriter\+::\+T\+\_\+\+Line\+Data}} =  std\+::vector$<$std\+::string$>$\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIWriter_a687d992f97a67e109c4105ffcd4bb6a8}\label{classmINI_1_1INIWriter_a687d992f97a67e109c4105ffcd4bb6a8}} 
+\index{mINI::INIWriter@{mINI::INIWriter}!T\_LineDataPtr@{T\_LineDataPtr}}
+\index{T\_LineDataPtr@{T\_LineDataPtr}!mINI::INIWriter@{mINI::INIWriter}}
+\doxysubsubsection{\texorpdfstring{T\_LineDataPtr}{T\_LineDataPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classmINI_1_1INIWriter_a687d992f97a67e109c4105ffcd4bb6a8}{m\+INI\+::\+INIWriter\+::\+T\+\_\+\+Line\+Data\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classmINI_1_1INIWriter_a4aab037d27eee30be7a1e9b70a9eefe1}{T\+\_\+\+Line\+Data}}$>$\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmINI_1_1INIWriter_af78c70976306d9a42eb2a655aee198f8}\label{classmINI_1_1INIWriter_af78c70976306d9a42eb2a655aee198f8}} 
+\index{mINI::INIWriter@{mINI::INIWriter}!INIWriter@{INIWriter}}
+\index{INIWriter@{INIWriter}!mINI::INIWriter@{mINI::INIWriter}}
+\doxysubsubsection{\texorpdfstring{INIWriter()}{INIWriter()}}
+{\footnotesize\ttfamily m\+INI\+::\+INIWriter\+::\+INIWriter (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIWriter_aede2dde9ed8ca7c3c823fc8f1ce22dfe}\label{classmINI_1_1INIWriter_aede2dde9ed8ca7c3c823fc8f1ce22dfe}} 
+\index{mINI::INIWriter@{mINI::INIWriter}!````~INIWriter@{$\sim$INIWriter}}
+\index{````~INIWriter@{$\sim$INIWriter}!mINI::INIWriter@{mINI::INIWriter}}
+\doxysubsubsection{\texorpdfstring{$\sim$INIWriter()}{~INIWriter()}}
+{\footnotesize\ttfamily m\+INI\+::\+INIWriter\+::$\sim$\+INIWriter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmINI_1_1INIWriter_af07ebb6a204244c2d9750ec7840d8129}\label{classmINI_1_1INIWriter_af07ebb6a204244c2d9750ec7840d8129}} 
+\index{mINI::INIWriter@{mINI::INIWriter}!getLazyOutput@{getLazyOutput}}
+\index{getLazyOutput@{getLazyOutput}!mINI::INIWriter@{mINI::INIWriter}}
+\doxysubsubsection{\texorpdfstring{getLazyOutput()}{getLazyOutput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmINI_1_1INIWriter_a4aab037d27eee30be7a1e9b70a9eefe1}{T\+\_\+\+Line\+Data}} m\+INI\+::\+INIWriter\+::get\+Lazy\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmINI_1_1INIWriter_a687d992f97a67e109c4105ffcd4bb6a8}{T\+\_\+\+Line\+Data\+Ptr}} const \&}]{line\+Data,  }\item[{\mbox{\hyperlink{namespacemINI_a7ebad9b80453aa82944eb63fb2782a9d}{INIStructure}} \&}]{data,  }\item[{\mbox{\hyperlink{namespacemINI_a7ebad9b80453aa82944eb63fb2782a9d}{INIStructure}} \&}]{original }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIWriter_a7183dcd6388af073deb84afd80f1c0c1}\label{classmINI_1_1INIWriter_a7183dcd6388af073deb84afd80f1c0c1}} 
+\index{mINI::INIWriter@{mINI::INIWriter}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!mINI::INIWriter@{mINI::INIWriter}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily bool m\+INI\+::\+INIWriter\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacemINI_a7ebad9b80453aa82944eb63fb2782a9d}{INIStructure}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmINI_1_1INIWriter_a0bc4e1eb7dc16b04b0801c0f77a78db1}\label{classmINI_1_1INIWriter_a0bc4e1eb7dc16b04b0801c0f77a78db1}} 
+\index{mINI::INIWriter@{mINI::INIWriter}!filename@{filename}}
+\index{filename@{filename}!mINI::INIWriter@{mINI::INIWriter}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily std\+::filesystem\+::path m\+INI\+::\+INIWriter\+::filename\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIWriter_a0ba92158dd3eaaf671252accfedab8b1}\label{classmINI_1_1INIWriter_a0ba92158dd3eaaf671252accfedab8b1}} 
+\index{mINI::INIWriter@{mINI::INIWriter}!prettyPrint@{prettyPrint}}
+\index{prettyPrint@{prettyPrint}!mINI::INIWriter@{mINI::INIWriter}}
+\doxysubsubsection{\texorpdfstring{prettyPrint}{prettyPrint}}
+{\footnotesize\ttfamily bool m\+INI\+::\+INIWriter\+::pretty\+Print = false}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ini_8h}{ini.\+h}}\end{DoxyCompactItemize}

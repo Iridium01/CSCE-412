@@ -1,0 +1,199 @@
+\hypertarget{classServer}{}\doxysection{Server Class Reference}
+\label{classServer}\index{Server@{Server}}
+
+
+Represents a server that processes requests.  
+
+
+
+
+{\ttfamily \#include $<$Server.\+h$>$}
+
+
+
+Collaboration diagram for Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classServer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServer_ad6cb42ad343fbe9f317a03d238f3309c}{Server}} (const std\+::string \&server\+\_\+id, const std\+::string \&log=\char`\"{}output\+\_\+log.\+txt\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classServer}{Server}} with the given ID and log file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_ab82eb7c3687f8d098c8c8c29ffa02cb8}{process\+\_\+request}} (const \mbox{\hyperlink{structRequest}{Request}} \&req, int clock\+\_\+cycle)
+\begin{DoxyCompactList}\small\item\em Processes a request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_a6da633532ce671706d2b21be696ad61c}{tick}} (int clock\+\_\+cycle)
+\begin{DoxyCompactList}\small\item\em Advances the server\textquotesingle{}s internal clock by one cycle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServer_a677f884e8c59cf6d0f831d028b9a812e}{is\+\_\+free}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the server is free. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classServer_aaa788cbedecff172cd860260948ff04f}{get\+\_\+id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the ID of the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classServer_a49bea5e67d86535d4a108d01f9e68908}{log\+\_\+event}} (int clock\+\_\+cycle, const std\+::string \&action)
+\begin{DoxyCompactList}\small\item\em Logs an event to the output log file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structRequest}{Request}} \mbox{\hyperlink{classServer_a290f54ac6a3e2fd5ee19925021d6add6}{current\+\_\+request}}
+\begin{DoxyCompactList}\small\item\em The current request being processed by the server. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServer_a3dfc33ccb5577cc1a1a1a6300b40c78a}{is\+\_\+busy}} = false
+\begin{DoxyCompactList}\small\item\em Indicates whether the server is busy processing a request. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classServer_a88b599d00fa7fbd898d8ec0871716e71}{remaining\+\_\+time}} = 0
+\item 
+std\+::string \mbox{\hyperlink{classServer_abefc9cc37a40a7561065b05a30e14be6}{output\+\_\+log}}
+\item 
+std\+::string \mbox{\hyperlink{classServer_a605b238cb9d25d457a07de8a697e1cca}{id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a server that processes requests. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServer_ad6cb42ad343fbe9f317a03d238f3309c}\label{classServer_ad6cb42ad343fbe9f317a03d238f3309c}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{server\+\_\+id,  }\item[{const std\+::string \&}]{log = {\ttfamily \char`\"{}output\+\_\+log.txt\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classServer}{Server}} with the given ID and log file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\+\_\+id} & Unique identifier for the server. \\
+\hline
+{\em log} & Path to the log file. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServer_aaa788cbedecff172cd860260948ff04f}\label{classServer_aaa788cbedecff172cd860260948ff04f}} 
+\index{Server@{Server}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily std\+::string Server\+::get\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the ID of the server. 
+
+\begin{DoxyReturn}{Returns}
+The server ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServer_a677f884e8c59cf6d0f831d028b9a812e}\label{classServer_a677f884e8c59cf6d0f831d028b9a812e}} 
+\index{Server@{Server}!is\_free@{is\_free}}
+\index{is\_free@{is\_free}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{is\_free()}{is\_free()}}
+{\footnotesize\ttfamily bool Server\+::is\+\_\+free (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the server is free. 
+
+\begin{DoxyReturn}{Returns}
+True if the server is not busy, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServer_a49bea5e67d86535d4a108d01f9e68908}\label{classServer_a49bea5e67d86535d4a108d01f9e68908}} 
+\index{Server@{Server}!log\_event@{log\_event}}
+\index{log\_event@{log\_event}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{log\_event()}{log\_event()}}
+{\footnotesize\ttfamily void Server\+::log\+\_\+event (\begin{DoxyParamCaption}\item[{int}]{clock\+\_\+cycle,  }\item[{const std\+::string \&}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Logs an event to the output log file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock\+\_\+cycle} & The current clock cycle. \\
+\hline
+{\em action} & Description of the event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServer_ab82eb7c3687f8d098c8c8c29ffa02cb8}\label{classServer_ab82eb7c3687f8d098c8c8c29ffa02cb8}} 
+\index{Server@{Server}!process\_request@{process\_request}}
+\index{process\_request@{process\_request}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{process\_request()}{process\_request()}}
+{\footnotesize\ttfamily void Server\+::process\+\_\+request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structRequest}{Request}} \&}]{req,  }\item[{int}]{clock\+\_\+cycle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Processes a request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & The request to process. \\
+\hline
+{\em clock\+\_\+cycle} & The current clock cycle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServer_a6da633532ce671706d2b21be696ad61c}\label{classServer_a6da633532ce671706d2b21be696ad61c}} 
+\index{Server@{Server}!tick@{tick}}
+\index{tick@{tick}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void Server\+::tick (\begin{DoxyParamCaption}\item[{int}]{clock\+\_\+cycle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Advances the server\textquotesingle{}s internal clock by one cycle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock\+\_\+cycle} & The current clock cycle. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classServer_a290f54ac6a3e2fd5ee19925021d6add6}\label{classServer_a290f54ac6a3e2fd5ee19925021d6add6}} 
+\index{Server@{Server}!current\_request@{current\_request}}
+\index{current\_request@{current\_request}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{current\_request}{current\_request}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRequest}{Request}} Server\+::current\+\_\+request\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current request being processed by the server. 
+
+\mbox{\Hypertarget{classServer_a605b238cb9d25d457a07de8a697e1cca}\label{classServer_a605b238cb9d25d457a07de8a697e1cca}} 
+\index{Server@{Server}!id@{id}}
+\index{id@{id}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily std\+::string Server\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classServer_a3dfc33ccb5577cc1a1a1a6300b40c78a}\label{classServer_a3dfc33ccb5577cc1a1a1a6300b40c78a}} 
+\index{Server@{Server}!is\_busy@{is\_busy}}
+\index{is\_busy@{is\_busy}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{is\_busy}{is\_busy}}
+{\footnotesize\ttfamily bool Server\+::is\+\_\+busy = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Indicates whether the server is busy processing a request. 
+
+\mbox{\Hypertarget{classServer_abefc9cc37a40a7561065b05a30e14be6}\label{classServer_abefc9cc37a40a7561065b05a30e14be6}} 
+\index{Server@{Server}!output\_log@{output\_log}}
+\index{output\_log@{output\_log}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{output\_log}{output\_log}}
+{\footnotesize\ttfamily std\+::string Server\+::output\+\_\+log\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classServer_a88b599d00fa7fbd898d8ec0871716e71}\label{classServer_a88b599d00fa7fbd898d8ec0871716e71}} 
+\index{Server@{Server}!remaining\_time@{remaining\_time}}
+\index{remaining\_time@{remaining\_time}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{remaining\_time}{remaining\_time}}
+{\footnotesize\ttfamily int Server\+::remaining\+\_\+time = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Server_8h}{Server.\+h}}\end{DoxyCompactItemize}

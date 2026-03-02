@@ -1,0 +1,218 @@
+\hypertarget{classmINI_1_1INIMap}{}\doxysection{m\+INI\+::INIMap$<$ T $>$ Class Template Reference}
+\label{classmINI_1_1INIMap}\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+
+
+{\ttfamily \#include $<$ini.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classmINI_1_1INIMap_a038bd69fd4b5014d167b6221ef964cc6}{const\+\_\+iterator}} = typename T\+\_\+\+Data\+Container\+::const\+\_\+iterator
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmINI_1_1INIMap_a960688d7cd1f5c1f8ae49fc7f5f830f9}{INIMap}} ()=default
+\item 
+\mbox{\hyperlink{classmINI_1_1INIMap_af13fda075f8603eaf72715991d02a744}{INIMap}} (\mbox{\hyperlink{classmINI_1_1INIMap}{INIMap}} const \&other)
+\item 
+T \& \mbox{\hyperlink{classmINI_1_1INIMap_a881e18a4c5ce8feb283b9e173af49d8f}{operator\mbox{[}$\,$\mbox{]}}} (std\+::string key)
+\item 
+T \mbox{\hyperlink{classmINI_1_1INIMap_a03713f77edbfee3e32fc2da9d57c7911}{get}} (std\+::string key) const
+\item 
+bool \mbox{\hyperlink{classmINI_1_1INIMap_a9403e3ff093497a548eee31d16136c4a}{has}} (std\+::string key) const
+\item 
+void \mbox{\hyperlink{classmINI_1_1INIMap_ac6a42d8dc2610b55b7e7849d2008954f}{set}} (std\+::string key, T obj)
+\item 
+void \mbox{\hyperlink{classmINI_1_1INIMap_a06fc697987cf1990b6cb5e78b4afafb5}{set}} (\mbox{\hyperlink{classmINI_1_1INIMap_ad340d19f41bdcdc0f213f3bda53bc647}{T\+\_\+\+Multi\+Args}} const \&multi\+Args)
+\item 
+bool \mbox{\hyperlink{classmINI_1_1INIMap_ab71316b8d144eaa86bf263e7bcae201f}{remove}} (std\+::string key)
+\item 
+void \mbox{\hyperlink{classmINI_1_1INIMap_af0b1251e710882fbdb5bced08a4fe341}{clear}} ()
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classmINI_1_1INIMap_afbfa4c9a30218b05aff20032f74fefca}{size}} () const
+\item 
+\mbox{\hyperlink{classmINI_1_1INIMap_a038bd69fd4b5014d167b6221ef964cc6}{const\+\_\+iterator}} \mbox{\hyperlink{classmINI_1_1INIMap_a558596a7a8fd4b523ba33f9a40d7ebc9}{begin}} () const
+\item 
+\mbox{\hyperlink{classmINI_1_1INIMap_a038bd69fd4b5014d167b6221ef964cc6}{const\+\_\+iterator}} \mbox{\hyperlink{classmINI_1_1INIMap_a1ed4163625857f0dd513368ef54869d5}{end}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classmINI_1_1INIMap_a6ef62741c329c510eff2039ea97d23de}{T\+\_\+\+Data\+Index\+Map}} = std\+::unordered\+\_\+map$<$ std\+::string, std\+::size\+\_\+t $>$
+\item 
+using \mbox{\hyperlink{classmINI_1_1INIMap_a2e4ab7232be4dee0500dafc8626ea43a}{T\+\_\+\+Data\+Item}} = std\+::pair$<$ std\+::string, T $>$
+\item 
+using \mbox{\hyperlink{classmINI_1_1INIMap_aac285c79b0771a38bc830b3c1ac96e88}{T\+\_\+\+Data\+Container}} = std\+::vector$<$ \mbox{\hyperlink{classmINI_1_1INIMap_a2e4ab7232be4dee0500dafc8626ea43a}{T\+\_\+\+Data\+Item}} $>$
+\item 
+using \mbox{\hyperlink{classmINI_1_1INIMap_ad340d19f41bdcdc0f213f3bda53bc647}{T\+\_\+\+Multi\+Args}} = typename std\+::vector$<$ std\+::pair$<$ std\+::string, T $>$ $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classmINI_1_1INIMap_ad852d58a13a46988ff3052cab36b0b68}{set\+Empty}} (std\+::string \&key)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmINI_1_1INIMap_a6ef62741c329c510eff2039ea97d23de}{T\+\_\+\+Data\+Index\+Map}} \mbox{\hyperlink{classmINI_1_1INIMap_a058659178aad092ee8ceec5b67469293}{data\+Index\+Map}}
+\item 
+\mbox{\hyperlink{classmINI_1_1INIMap_aac285c79b0771a38bc830b3c1ac96e88}{T\+\_\+\+Data\+Container}} \mbox{\hyperlink{classmINI_1_1INIMap_ab3ee50e539c426b5152aa9db2b003c68}{data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classmINI_1_1INIMap_a038bd69fd4b5014d167b6221ef964cc6}\label{classmINI_1_1INIMap_a038bd69fd4b5014d167b6221ef964cc6}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!const\_iterator@{const\_iterator}}
+\index{const\_iterator@{const\_iterator}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{const\_iterator}{const\_iterator}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::\mbox{\hyperlink{classmINI_1_1INIMap_a038bd69fd4b5014d167b6221ef964cc6}{const\+\_\+iterator}} =  typename T\+\_\+\+Data\+Container\+::const\+\_\+iterator}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_aac285c79b0771a38bc830b3c1ac96e88}\label{classmINI_1_1INIMap_aac285c79b0771a38bc830b3c1ac96e88}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!T\_DataContainer@{T\_DataContainer}}
+\index{T\_DataContainer@{T\_DataContainer}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{T\_DataContainer}{T\_DataContainer}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::\mbox{\hyperlink{classmINI_1_1INIMap_aac285c79b0771a38bc830b3c1ac96e88}{T\+\_\+\+Data\+Container}} =  std\+::vector$<$\mbox{\hyperlink{classmINI_1_1INIMap_a2e4ab7232be4dee0500dafc8626ea43a}{T\+\_\+\+Data\+Item}}$>$\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_a6ef62741c329c510eff2039ea97d23de}\label{classmINI_1_1INIMap_a6ef62741c329c510eff2039ea97d23de}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!T\_DataIndexMap@{T\_DataIndexMap}}
+\index{T\_DataIndexMap@{T\_DataIndexMap}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{T\_DataIndexMap}{T\_DataIndexMap}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::\mbox{\hyperlink{classmINI_1_1INIMap_a6ef62741c329c510eff2039ea97d23de}{T\+\_\+\+Data\+Index\+Map}} =  std\+::unordered\+\_\+map$<$std\+::string, std\+::size\+\_\+t$>$\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_a2e4ab7232be4dee0500dafc8626ea43a}\label{classmINI_1_1INIMap_a2e4ab7232be4dee0500dafc8626ea43a}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!T\_DataItem@{T\_DataItem}}
+\index{T\_DataItem@{T\_DataItem}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{T\_DataItem}{T\_DataItem}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::\mbox{\hyperlink{classmINI_1_1INIMap_a2e4ab7232be4dee0500dafc8626ea43a}{T\+\_\+\+Data\+Item}} =  std\+::pair$<$std\+::string, T$>$\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_ad340d19f41bdcdc0f213f3bda53bc647}\label{classmINI_1_1INIMap_ad340d19f41bdcdc0f213f3bda53bc647}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!T\_MultiArgs@{T\_MultiArgs}}
+\index{T\_MultiArgs@{T\_MultiArgs}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{T\_MultiArgs}{T\_MultiArgs}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::\mbox{\hyperlink{classmINI_1_1INIMap_ad340d19f41bdcdc0f213f3bda53bc647}{T\+\_\+\+Multi\+Args}} =  typename std\+::vector$<$std\+::pair$<$std\+::string, T$>$ $>$\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmINI_1_1INIMap_a960688d7cd1f5c1f8ae49fc7f5f830f9}\label{classmINI_1_1INIMap_a960688d7cd1f5c1f8ae49fc7f5f830f9}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!INIMap@{INIMap}}
+\index{INIMap@{INIMap}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{INIMap()}{INIMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::\mbox{\hyperlink{classmINI_1_1INIMap}{INIMap}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_af13fda075f8603eaf72715991d02a744}\label{classmINI_1_1INIMap_af13fda075f8603eaf72715991d02a744}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!INIMap@{INIMap}}
+\index{INIMap@{INIMap}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{INIMap()}{INIMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::\mbox{\hyperlink{classmINI_1_1INIMap}{INIMap}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmINI_1_1INIMap}{INIMap}}$<$ T $>$ const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmINI_1_1INIMap_a558596a7a8fd4b523ba33f9a40d7ebc9}\label{classmINI_1_1INIMap_a558596a7a8fd4b523ba33f9a40d7ebc9}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classmINI_1_1INIMap_a038bd69fd4b5014d167b6221ef964cc6}{const\+\_\+iterator}} \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_af0b1251e710882fbdb5bced08a4fe341}\label{classmINI_1_1INIMap_af0b1251e710882fbdb5bced08a4fe341}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!clear@{clear}}
+\index{clear@{clear}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_a1ed4163625857f0dd513368ef54869d5}\label{classmINI_1_1INIMap_a1ed4163625857f0dd513368ef54869d5}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!end@{end}}
+\index{end@{end}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classmINI_1_1INIMap_a038bd69fd4b5014d167b6221ef964cc6}{const\+\_\+iterator}} \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_a03713f77edbfee3e32fc2da9d57c7911}\label{classmINI_1_1INIMap_a03713f77edbfee3e32fc2da9d57c7911}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!get@{get}}
+\index{get@{get}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::get (\begin{DoxyParamCaption}\item[{std\+::string}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_a9403e3ff093497a548eee31d16136c4a}\label{classmINI_1_1INIMap_a9403e3ff093497a548eee31d16136c4a}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!has@{has}}
+\index{has@{has}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{has()}{has()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::has (\begin{DoxyParamCaption}\item[{std\+::string}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_a881e18a4c5ce8feb283b9e173af49d8f}\label{classmINI_1_1INIMap_a881e18a4c5ce8feb283b9e173af49d8f}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T\& \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::string}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_ab71316b8d144eaa86bf263e7bcae201f}\label{classmINI_1_1INIMap_ab71316b8d144eaa86bf263e7bcae201f}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{std\+::string}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_ac6a42d8dc2610b55b7e7849d2008954f}\label{classmINI_1_1INIMap_ac6a42d8dc2610b55b7e7849d2008954f}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!set@{set}}
+\index{set@{set}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::set (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{T}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_a06fc697987cf1990b6cb5e78b4afafb5}\label{classmINI_1_1INIMap_a06fc697987cf1990b6cb5e78b4afafb5}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!set@{set}}
+\index{set@{set}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmINI_1_1INIMap_ad340d19f41bdcdc0f213f3bda53bc647}{T\+\_\+\+Multi\+Args}} const \&}]{multi\+Args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_ad852d58a13a46988ff3052cab36b0b68}\label{classmINI_1_1INIMap_ad852d58a13a46988ff3052cab36b0b68}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!setEmpty@{setEmpty}}
+\index{setEmpty@{setEmpty}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setEmpty()}{setEmpty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::set\+Empty (\begin{DoxyParamCaption}\item[{std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_afbfa4c9a30218b05aff20032f74fefca}\label{classmINI_1_1INIMap_afbfa4c9a30218b05aff20032f74fefca}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!size@{size}}
+\index{size@{size}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmINI_1_1INIMap_ab3ee50e539c426b5152aa9db2b003c68}\label{classmINI_1_1INIMap_ab3ee50e539c426b5152aa9db2b003c68}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!data@{data}}
+\index{data@{data}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classmINI_1_1INIMap_aac285c79b0771a38bc830b3c1ac96e88}{T\+\_\+\+Data\+Container}} \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIMap_a058659178aad092ee8ceec5b67469293}\label{classmINI_1_1INIMap_a058659178aad092ee8ceec5b67469293}} 
+\index{mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}!dataIndexMap@{dataIndexMap}}
+\index{dataIndexMap@{dataIndexMap}!mINI::INIMap$<$ T $>$@{mINI::INIMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{dataIndexMap}{dataIndexMap}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classmINI_1_1INIMap_a6ef62741c329c510eff2039ea97d23de}{T\+\_\+\+Data\+Index\+Map}} \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap}}$<$ T $>$\+::data\+Index\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ini_8h}{ini.\+h}}\end{DoxyCompactItemize}

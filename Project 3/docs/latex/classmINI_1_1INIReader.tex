@@ -1,0 +1,118 @@
+\hypertarget{classmINI_1_1INIReader}{}\doxysection{m\+INI\+::INIReader Class Reference}
+\label{classmINI_1_1INIReader}\index{mINI::INIReader@{mINI::INIReader}}
+
+
+{\ttfamily \#include $<$ini.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classmINI_1_1INIReader_ab2561d08dbf2694aed7eaa5aa4181b4c}{T\+\_\+\+Line\+Data}} = std\+::vector$<$ std\+::string $>$
+\item 
+using \mbox{\hyperlink{classmINI_1_1INIReader_ac797e3f4dd2bec006bc827e70f8a5373}{T\+\_\+\+Line\+Data\+Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classmINI_1_1INIReader_ab2561d08dbf2694aed7eaa5aa4181b4c}{T\+\_\+\+Line\+Data}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmINI_1_1INIReader_aef3335eac87d9c97649bd8f5e145d38e}{INIReader}} (std\+::filesystem\+::path const \&filename, bool keep\+Line\+Data=false)
+\item 
+\mbox{\hyperlink{classmINI_1_1INIReader_a5a54fa4142532ec2ef7ec075f96e14cb}{$\sim$\+INIReader}} ()=default
+\item 
+bool \mbox{\hyperlink{classmINI_1_1INIReader_a4cb3bf02943c31380cb8fbfb7834a844}{operator$>$$>$}} (\mbox{\hyperlink{namespacemINI_a7ebad9b80453aa82944eb63fb2782a9d}{INIStructure}} \&data)
+\item 
+\mbox{\hyperlink{classmINI_1_1INIReader_ac797e3f4dd2bec006bc827e70f8a5373}{T\+\_\+\+Line\+Data\+Ptr}} \mbox{\hyperlink{classmINI_1_1INIReader_a81a93e1857a329b7dc34dd4bc1d58c20}{get\+Lines}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classmINI_1_1INIReader_ab1d440967ddda5be8cefc33016681da7}{is\+BOM}} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmINI_1_1INIReader_ab2561d08dbf2694aed7eaa5aa4181b4c}{T\+\_\+\+Line\+Data}} \mbox{\hyperlink{classmINI_1_1INIReader_a88db39e61968629545105ded85e77fc1}{read\+File}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ifstream \mbox{\hyperlink{classmINI_1_1INIReader_ace078f277077ae10cfe3d92e65b56ec7}{file\+Read\+Stream}}
+\item 
+\mbox{\hyperlink{classmINI_1_1INIReader_ac797e3f4dd2bec006bc827e70f8a5373}{T\+\_\+\+Line\+Data\+Ptr}} \mbox{\hyperlink{classmINI_1_1INIReader_a296a6b5fbb96a3528c9497e7d329a58a}{line\+Data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classmINI_1_1INIReader_ab2561d08dbf2694aed7eaa5aa4181b4c}\label{classmINI_1_1INIReader_ab2561d08dbf2694aed7eaa5aa4181b4c}} 
+\index{mINI::INIReader@{mINI::INIReader}!T\_LineData@{T\_LineData}}
+\index{T\_LineData@{T\_LineData}!mINI::INIReader@{mINI::INIReader}}
+\doxysubsubsection{\texorpdfstring{T\_LineData}{T\_LineData}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classmINI_1_1INIReader_ab2561d08dbf2694aed7eaa5aa4181b4c}{m\+INI\+::\+INIReader\+::\+T\+\_\+\+Line\+Data}} =  std\+::vector$<$std\+::string$>$}
+
+\mbox{\Hypertarget{classmINI_1_1INIReader_ac797e3f4dd2bec006bc827e70f8a5373}\label{classmINI_1_1INIReader_ac797e3f4dd2bec006bc827e70f8a5373}} 
+\index{mINI::INIReader@{mINI::INIReader}!T\_LineDataPtr@{T\_LineDataPtr}}
+\index{T\_LineDataPtr@{T\_LineDataPtr}!mINI::INIReader@{mINI::INIReader}}
+\doxysubsubsection{\texorpdfstring{T\_LineDataPtr}{T\_LineDataPtr}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classmINI_1_1INIReader_ac797e3f4dd2bec006bc827e70f8a5373}{m\+INI\+::\+INIReader\+::\+T\+\_\+\+Line\+Data\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classmINI_1_1INIReader_ab2561d08dbf2694aed7eaa5aa4181b4c}{T\+\_\+\+Line\+Data}}$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmINI_1_1INIReader_aef3335eac87d9c97649bd8f5e145d38e}\label{classmINI_1_1INIReader_aef3335eac87d9c97649bd8f5e145d38e}} 
+\index{mINI::INIReader@{mINI::INIReader}!INIReader@{INIReader}}
+\index{INIReader@{INIReader}!mINI::INIReader@{mINI::INIReader}}
+\doxysubsubsection{\texorpdfstring{INIReader()}{INIReader()}}
+{\footnotesize\ttfamily m\+INI\+::\+INIReader\+::\+INIReader (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path const \&}]{filename,  }\item[{bool}]{keep\+Line\+Data = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIReader_a5a54fa4142532ec2ef7ec075f96e14cb}\label{classmINI_1_1INIReader_a5a54fa4142532ec2ef7ec075f96e14cb}} 
+\index{mINI::INIReader@{mINI::INIReader}!````~INIReader@{$\sim$INIReader}}
+\index{````~INIReader@{$\sim$INIReader}!mINI::INIReader@{mINI::INIReader}}
+\doxysubsubsection{\texorpdfstring{$\sim$INIReader()}{~INIReader()}}
+{\footnotesize\ttfamily m\+INI\+::\+INIReader\+::$\sim$\+INIReader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmINI_1_1INIReader_a81a93e1857a329b7dc34dd4bc1d58c20}\label{classmINI_1_1INIReader_a81a93e1857a329b7dc34dd4bc1d58c20}} 
+\index{mINI::INIReader@{mINI::INIReader}!getLines@{getLines}}
+\index{getLines@{getLines}!mINI::INIReader@{mINI::INIReader}}
+\doxysubsubsection{\texorpdfstring{getLines()}{getLines()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmINI_1_1INIReader_ac797e3f4dd2bec006bc827e70f8a5373}{T\+\_\+\+Line\+Data\+Ptr}} m\+INI\+::\+INIReader\+::get\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIReader_a4cb3bf02943c31380cb8fbfb7834a844}\label{classmINI_1_1INIReader_a4cb3bf02943c31380cb8fbfb7834a844}} 
+\index{mINI::INIReader@{mINI::INIReader}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!mINI::INIReader@{mINI::INIReader}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily bool m\+INI\+::\+INIReader\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacemINI_a7ebad9b80453aa82944eb63fb2782a9d}{INIStructure}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIReader_a88db39e61968629545105ded85e77fc1}\label{classmINI_1_1INIReader_a88db39e61968629545105ded85e77fc1}} 
+\index{mINI::INIReader@{mINI::INIReader}!readFile@{readFile}}
+\index{readFile@{readFile}!mINI::INIReader@{mINI::INIReader}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmINI_1_1INIReader_ab2561d08dbf2694aed7eaa5aa4181b4c}{T\+\_\+\+Line\+Data}} m\+INI\+::\+INIReader\+::read\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmINI_1_1INIReader_ace078f277077ae10cfe3d92e65b56ec7}\label{classmINI_1_1INIReader_ace078f277077ae10cfe3d92e65b56ec7}} 
+\index{mINI::INIReader@{mINI::INIReader}!fileReadStream@{fileReadStream}}
+\index{fileReadStream@{fileReadStream}!mINI::INIReader@{mINI::INIReader}}
+\doxysubsubsection{\texorpdfstring{fileReadStream}{fileReadStream}}
+{\footnotesize\ttfamily std\+::ifstream m\+INI\+::\+INIReader\+::file\+Read\+Stream\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmINI_1_1INIReader_ab1d440967ddda5be8cefc33016681da7}\label{classmINI_1_1INIReader_ab1d440967ddda5be8cefc33016681da7}} 
+\index{mINI::INIReader@{mINI::INIReader}!isBOM@{isBOM}}
+\index{isBOM@{isBOM}!mINI::INIReader@{mINI::INIReader}}
+\doxysubsubsection{\texorpdfstring{isBOM}{isBOM}}
+{\footnotesize\ttfamily bool m\+INI\+::\+INIReader\+::is\+BOM = false}
+
+\mbox{\Hypertarget{classmINI_1_1INIReader_a296a6b5fbb96a3528c9497e7d329a58a}\label{classmINI_1_1INIReader_a296a6b5fbb96a3528c9497e7d329a58a}} 
+\index{mINI::INIReader@{mINI::INIReader}!lineData@{lineData}}
+\index{lineData@{lineData}!mINI::INIReader@{mINI::INIReader}}
+\doxysubsubsection{\texorpdfstring{lineData}{lineData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmINI_1_1INIReader_ac797e3f4dd2bec006bc827e70f8a5373}{T\+\_\+\+Line\+Data\+Ptr}} m\+INI\+::\+INIReader\+::line\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ini_8h}{ini.\+h}}\end{DoxyCompactItemize}

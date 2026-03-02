@@ -1,0 +1,6 @@
+<map id="Server.h" name="Server.h">
+<area shape="rect" id="node1" title=" " alt="" coords="29,5,103,32"/>
+<area shape="rect" id="node2" href="$LoadBalancer_8h.html" title=" " alt="" coords="5,80,127,107"/>
+<area shape="rect" id="node3" href="$Switch_8h.html" title=" " alt="" coords="27,155,105,181"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="Entry point for the Load Balancer simulation." alt="" coords="25,229,107,256"/>
+</map>

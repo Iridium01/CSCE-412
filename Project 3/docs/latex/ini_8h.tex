@@ -1,0 +1,87 @@
+\hypertarget{ini_8h}{}\doxysection{ini.\+h File Reference}
+\label{ini_8h}\index{ini.h@{ini.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+Include dependency graph for ini.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ini_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{ini_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmINI_1_1INIMap}{m\+INI\+::\+INIMap$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classmINI_1_1INIReader}{m\+INI\+::\+INIReader}}
+\item 
+class \mbox{\hyperlink{classmINI_1_1INIGenerator}{m\+INI\+::\+INIGenerator}}
+\item 
+class \mbox{\hyperlink{classmINI_1_1INIWriter}{m\+INI\+::\+INIWriter}}
+\item 
+class \mbox{\hyperlink{classmINI_1_1INIFile}{m\+INI\+::\+INIFile}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacemINI}{m\+INI}}
+\item 
+ \mbox{\hyperlink{namespacemINI_1_1INIStringUtil}{m\+INI\+::\+INIString\+Util}}
+\item 
+ \mbox{\hyperlink{namespacemINI_1_1INIParser}{m\+INI\+::\+INIParser}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacemINI_a7ebad9b80453aa82944eb63fb2782a9d}{m\+INI\+::\+INIStructure}} = INIMap$<$ INIMap$<$ std\+::string $>$ $>$
+\item 
+using \mbox{\hyperlink{namespacemINI_1_1INIParser_a894f6f595fdba981ebb3a68a9a12e722}{m\+INI\+::\+INIParser\+::\+T\+\_\+\+Parse\+Values}} = std\+::pair$<$ std\+::string, std\+::string $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacemINI_1_1INIParser_a933476e35f3fe30f8739e9326eccba60}{m\+INI\+::\+INIParser\+::\+PData\+Type}} \+: char \{ \newline
+\mbox{\hyperlink{namespacemINI_1_1INIParser_a933476e35f3fe30f8739e9326eccba60ae9a2376147f4752a74a9967fcc8c633e}{m\+INI\+::\+INIParser\+::\+PDATA\+\_\+\+NONE}}
+, \mbox{\hyperlink{namespacemINI_1_1INIParser_a933476e35f3fe30f8739e9326eccba60a6ca9814d1ea90f8a4b819a50a4505203}{m\+INI\+::\+INIParser\+::\+PDATA\+\_\+\+COMMENT}}
+, \mbox{\hyperlink{namespacemINI_1_1INIParser_a933476e35f3fe30f8739e9326eccba60ac266f8ea940bb562878bc3a77617a09b}{m\+INI\+::\+INIParser\+::\+PDATA\+\_\+\+SECTION}}
+, \mbox{\hyperlink{namespacemINI_1_1INIParser_a933476e35f3fe30f8739e9326eccba60a48c6c7a65cdc60ab89b719ce050d63ff}{m\+INI\+::\+INIParser\+::\+PDATA\+\_\+\+KEYVALUE}}
+, \newline
+\mbox{\hyperlink{namespacemINI_1_1INIParser_a933476e35f3fe30f8739e9326eccba60af55e49a2f30a72b396dd360596e72e9f}{m\+INI\+::\+INIParser\+::\+PDATA\+\_\+\+UNKNOWN}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacemINI_1_1INIStringUtil_adcbaf06b60e9bed7a2f8d48f45c1a615}{m\+INI\+::\+INIString\+Util\+::trim}} (std\+::string \&str)
+\item 
+void \mbox{\hyperlink{namespacemINI_1_1INIStringUtil_aab66a8d081db7826eeea906cfd567281}{m\+INI\+::\+INIString\+Util\+::to\+Lower}} (std\+::string \&str)
+\item 
+void \mbox{\hyperlink{namespacemINI_1_1INIStringUtil_a7e002cc156d2377c091de83634e9063f}{m\+INI\+::\+INIString\+Util\+::replace}} (std\+::string \&str, std\+::string const \&a, std\+::string const \&b)
+\item 
+PData\+Type \mbox{\hyperlink{namespacemINI_1_1INIParser_a35c71b789896a8d02f6ca9a8b08824b6}{m\+INI\+::\+INIParser\+::parse\+Line}} (std\+::string line, T\+\_\+\+Parse\+Values \&parse\+Data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$const \mbox{\hyperlink{namespacemINI_1_1INIStringUtil_a7631c088e3dfd2dcdb9345dc10988fac}{m\+INI\+::\+INIString\+Util\+::whitespace\+Delimiters}} = \char`\"{} \textbackslash{}t\textbackslash{}n\textbackslash{}r\textbackslash{}f\textbackslash{}v\char`\"{}
+\item 
+const char $\ast$const \mbox{\hyperlink{namespacemINI_1_1INIStringUtil_a6a07bc25b9c17bd55c297f69cc90eee2}{m\+INI\+::\+INIString\+Util\+::endl}} = \char`\"{}\textbackslash{}n\char`\"{}
+\end{DoxyCompactItemize}

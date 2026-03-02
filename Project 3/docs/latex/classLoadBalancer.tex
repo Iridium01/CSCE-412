@@ -1,0 +1,287 @@
+\hypertarget{classLoadBalancer}{}\doxysection{Load\+Balancer Class Reference}
+\label{classLoadBalancer}\index{LoadBalancer@{LoadBalancer}}
+
+
+Manages servers and request queues, dynamically adjusts server count, and logs events.  
+
+
+
+
+{\ttfamily \#include $<$Load\+Balancer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLoadBalancer_a30d4c2d540c01ef7bbb5f693bd55e772}{Load\+Balancer}} (const std\+::string \mbox{\hyperlink{classLoadBalancer_ab154e11ec35cfe533e27a48443f96a1b}{id}}, size\+\_\+t initial\+\_\+servers, const std\+::string \&log\+\_\+file=\char`\"{}output\+\_\+log.\+txt\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} with the given ID and initial servers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a68f92971052a79e774948420881ea337}{add\+\_\+request}} (const \mbox{\hyperlink{structRequest}{Request}} \&req, int clock\+\_\+cycle)
+\begin{DoxyCompactList}\small\item\em Adds a request to the load balancer\textquotesingle{}s queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a1efe4b0816ce1b35b0ccba35f49e8d9d}{tick}} (int clock\+\_\+cycle)
+\begin{DoxyCompactList}\small\item\em Advances the simulation by one clock cycle, processing requests and adjusting servers as needed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a96a22283f8a38580243c8044e02477d6}{update\+\_\+stats}} (std\+::ofstream \&stats\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Print statistics for the load balancer to a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_ab7694755a1d8a35626abd5194d33564c}{block\+\_\+ip}} (const std\+::string \&ip, int clock\+\_\+cycle)
+\begin{DoxyCompactList}\small\item\em Blocks an IP address in both load balancers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLoadBalancer_a06f0f80359060a155b9b5aaa6839252c}{log\+\_\+event}} (int clock\+\_\+cycle, const std\+::string \&action)
+\begin{DoxyCompactList}\small\item\em Logs an event to the output log file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_ad5a44fd326551f3f4c9e522b62c23083}{add\+\_\+server}} (int clock\+\_\+cycle)
+\begin{DoxyCompactList}\small\item\em Adds a new server to the load balancer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a73ad3f5a5f36f29c2ddd68b58ef26c20}{remove\+\_\+server}} (int clock\+\_\+cycle)
+\begin{DoxyCompactList}\small\item\em Removes an inactive server from the load balancer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classServer}{Server}} $>$ \mbox{\hyperlink{classLoadBalancer_a61f268e9253aae191233de20d7c3ef5f}{servers}}
+\item 
+std\+::queue$<$ \mbox{\hyperlink{structRequest}{Request}} $>$ \mbox{\hyperlink{classLoadBalancer_a5ee2fe843f9022ae19a432c17d2e63cb}{request\+\_\+queue}}
+\item 
+std\+::string \mbox{\hyperlink{classLoadBalancer_ab154e11ec35cfe533e27a48443f96a1b}{id}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classLoadBalancer_aa27c3e4f0ff2992970cdb863310da63b}{blocked\+\_\+ips}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classLoadBalancer_ab760fa3ca28d71d52681a3a5b8e774ed}{server\+\_\+id\+\_\+counter}} = 1
+\item 
+std\+::string \mbox{\hyperlink{classLoadBalancer_a6953b43aa113ad9cca2c3453c9a18a20}{output\+\_\+log}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classLoadBalancer_a15c1f59b9a14dbfa25b40d642e629512}{total\+\_\+requests}} = 0
+\item 
+size\+\_\+t \mbox{\hyperlink{classLoadBalancer_a9b4671ca7a93e8fc6bbd02fa66c46c75}{min\+\_\+request\+\_\+time}} = 2147483647
+\item 
+size\+\_\+t \mbox{\hyperlink{classLoadBalancer_afb8a91b423b322a8b657aaca92614aae}{max\+\_\+request\+\_\+time}} = 0
+\item 
+double \mbox{\hyperlink{classLoadBalancer_ac383e4e66c30bf580878b87b2630a92c}{avg\+\_\+request\+\_\+time}} = 0.\+0
+\item 
+size\+\_\+t \mbox{\hyperlink{classLoadBalancer_a50bfcb47447c86f4f606c923dd1df317}{servers\+\_\+created}} = 0
+\item 
+size\+\_\+t \mbox{\hyperlink{classLoadBalancer_a15baa7f91db32f3883a01738edbe48c4}{servers\+\_\+removed}} = 0
+\item 
+size\+\_\+t \mbox{\hyperlink{classLoadBalancer_ad87f831404ff17622b079235cac4c5f6}{max\+\_\+servers}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages servers and request queues, dynamically adjusts server count, and logs events. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLoadBalancer_a30d4c2d540c01ef7bbb5f693bd55e772}\label{classLoadBalancer_a30d4c2d540c01ef7bbb5f693bd55e772}} 
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}}
+{\footnotesize\ttfamily Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}\item[{const std\+::string}]{id,  }\item[{size\+\_\+t}]{initial\+\_\+servers,  }\item[{const std\+::string \&}]{log\+\_\+file = {\ttfamily \char`\"{}output\+\_\+log.txt\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} with the given ID and initial servers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Unique identifier for the load balancer. \\
+\hline
+{\em initial\+\_\+servers} & Number of servers to initialize. \\
+\hline
+{\em log\+\_\+file} & Path to the log file. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLoadBalancer_a68f92971052a79e774948420881ea337}\label{classLoadBalancer_a68f92971052a79e774948420881ea337}} 
+\index{LoadBalancer@{LoadBalancer}!add\_request@{add\_request}}
+\index{add\_request@{add\_request}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{add\_request()}{add\_request()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::add\+\_\+request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structRequest}{Request}} \&}]{req,  }\item[{int}]{clock\+\_\+cycle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a request to the load balancer\textquotesingle{}s queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & The request to add. \\
+\hline
+{\em clock\+\_\+cycle} & The current clock cycle.\\
+\hline
+\end{DoxyParams}
+If the request\textquotesingle{}s source IP is in the blocked list, it will be rejected. Otherwise it is added to the queue. \mbox{\Hypertarget{classLoadBalancer_ad5a44fd326551f3f4c9e522b62c23083}\label{classLoadBalancer_ad5a44fd326551f3f4c9e522b62c23083}} 
+\index{LoadBalancer@{LoadBalancer}!add\_server@{add\_server}}
+\index{add\_server@{add\_server}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{add\_server()}{add\_server()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::add\+\_\+server (\begin{DoxyParamCaption}\item[{int}]{clock\+\_\+cycle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Adds a new server to the load balancer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock\+\_\+cycle} & The current clock cycle.\\
+\hline
+\end{DoxyParams}
+The server ID is generated based on the load balancer type (streaming or processing) and a counter. \mbox{\Hypertarget{classLoadBalancer_ab7694755a1d8a35626abd5194d33564c}\label{classLoadBalancer_ab7694755a1d8a35626abd5194d33564c}} 
+\index{LoadBalancer@{LoadBalancer}!block\_ip@{block\_ip}}
+\index{block\_ip@{block\_ip}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{block\_ip()}{block\_ip()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::block\+\_\+ip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip,  }\item[{int}]{clock\+\_\+cycle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Blocks an IP address in both load balancers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & The IP address to block. \\
+\hline
+{\em clock\+\_\+cycle} & The current clock cycle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_a06f0f80359060a155b9b5aaa6839252c}\label{classLoadBalancer_a06f0f80359060a155b9b5aaa6839252c}} 
+\index{LoadBalancer@{LoadBalancer}!log\_event@{log\_event}}
+\index{log\_event@{log\_event}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{log\_event()}{log\_event()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::log\+\_\+event (\begin{DoxyParamCaption}\item[{int}]{clock\+\_\+cycle,  }\item[{const std\+::string \&}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Logs an event to the output log file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock\+\_\+cycle} & The current clock cycle. \\
+\hline
+{\em action} & Description of the event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_a73ad3f5a5f36f29c2ddd68b58ef26c20}\label{classLoadBalancer_a73ad3f5a5f36f29c2ddd68b58ef26c20}} 
+\index{LoadBalancer@{LoadBalancer}!remove\_server@{remove\_server}}
+\index{remove\_server@{remove\_server}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{remove\_server()}{remove\_server()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::remove\+\_\+server (\begin{DoxyParamCaption}\item[{int}]{clock\+\_\+cycle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Removes an inactive server from the load balancer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock\+\_\+cycle} & The current clock cycle.\\
+\hline
+\end{DoxyParams}
+The function iterates through the list of servers and removes the first one that is not busy. \mbox{\Hypertarget{classLoadBalancer_a1efe4b0816ce1b35b0ccba35f49e8d9d}\label{classLoadBalancer_a1efe4b0816ce1b35b0ccba35f49e8d9d}} 
+\index{LoadBalancer@{LoadBalancer}!tick@{tick}}
+\index{tick@{tick}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::tick (\begin{DoxyParamCaption}\item[{int}]{clock\+\_\+cycle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Advances the simulation by one clock cycle, processing requests and adjusting servers as needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock\+\_\+cycle} & The current clock cycle.\\
+\hline
+\end{DoxyParams}
+The function checks each server for availability and assigns requests from the queue. It also dynamically adds or removes servers based on the queue size and current server count, with a cooldown period of 10 cycles to prevent rapid fluctuations. \mbox{\Hypertarget{classLoadBalancer_a96a22283f8a38580243c8044e02477d6}\label{classLoadBalancer_a96a22283f8a38580243c8044e02477d6}} 
+\index{LoadBalancer@{LoadBalancer}!update\_stats@{update\_stats}}
+\index{update\_stats@{update\_stats}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{update\_stats()}{update\_stats()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::update\+\_\+stats (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{stats\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Print statistics for the load balancer to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stats\+\_\+file} & An open ofstream to write the statistics to. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classLoadBalancer_ac383e4e66c30bf580878b87b2630a92c}\label{classLoadBalancer_ac383e4e66c30bf580878b87b2630a92c}} 
+\index{LoadBalancer@{LoadBalancer}!avg\_request\_time@{avg\_request\_time}}
+\index{avg\_request\_time@{avg\_request\_time}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{avg\_request\_time}{avg\_request\_time}}
+{\footnotesize\ttfamily double Load\+Balancer\+::avg\+\_\+request\+\_\+time = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLoadBalancer_aa27c3e4f0ff2992970cdb863310da63b}\label{classLoadBalancer_aa27c3e4f0ff2992970cdb863310da63b}} 
+\index{LoadBalancer@{LoadBalancer}!blocked\_ips@{blocked\_ips}}
+\index{blocked\_ips@{blocked\_ips}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{blocked\_ips}{blocked\_ips}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Load\+Balancer\+::blocked\+\_\+ips\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLoadBalancer_ab154e11ec35cfe533e27a48443f96a1b}\label{classLoadBalancer_ab154e11ec35cfe533e27a48443f96a1b}} 
+\index{LoadBalancer@{LoadBalancer}!id@{id}}
+\index{id@{id}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily std\+::string Load\+Balancer\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLoadBalancer_afb8a91b423b322a8b657aaca92614aae}\label{classLoadBalancer_afb8a91b423b322a8b657aaca92614aae}} 
+\index{LoadBalancer@{LoadBalancer}!max\_request\_time@{max\_request\_time}}
+\index{max\_request\_time@{max\_request\_time}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{max\_request\_time}{max\_request\_time}}
+{\footnotesize\ttfamily size\+\_\+t Load\+Balancer\+::max\+\_\+request\+\_\+time = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLoadBalancer_ad87f831404ff17622b079235cac4c5f6}\label{classLoadBalancer_ad87f831404ff17622b079235cac4c5f6}} 
+\index{LoadBalancer@{LoadBalancer}!max\_servers@{max\_servers}}
+\index{max\_servers@{max\_servers}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{max\_servers}{max\_servers}}
+{\footnotesize\ttfamily size\+\_\+t Load\+Balancer\+::max\+\_\+servers = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLoadBalancer_a9b4671ca7a93e8fc6bbd02fa66c46c75}\label{classLoadBalancer_a9b4671ca7a93e8fc6bbd02fa66c46c75}} 
+\index{LoadBalancer@{LoadBalancer}!min\_request\_time@{min\_request\_time}}
+\index{min\_request\_time@{min\_request\_time}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{min\_request\_time}{min\_request\_time}}
+{\footnotesize\ttfamily size\+\_\+t Load\+Balancer\+::min\+\_\+request\+\_\+time = 2147483647\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLoadBalancer_a6953b43aa113ad9cca2c3453c9a18a20}\label{classLoadBalancer_a6953b43aa113ad9cca2c3453c9a18a20}} 
+\index{LoadBalancer@{LoadBalancer}!output\_log@{output\_log}}
+\index{output\_log@{output\_log}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{output\_log}{output\_log}}
+{\footnotesize\ttfamily std\+::string Load\+Balancer\+::output\+\_\+log\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLoadBalancer_a5ee2fe843f9022ae19a432c17d2e63cb}\label{classLoadBalancer_a5ee2fe843f9022ae19a432c17d2e63cb}} 
+\index{LoadBalancer@{LoadBalancer}!request\_queue@{request\_queue}}
+\index{request\_queue@{request\_queue}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{request\_queue}{request\_queue}}
+{\footnotesize\ttfamily std\+::queue$<$\mbox{\hyperlink{structRequest}{Request}}$>$ Load\+Balancer\+::request\+\_\+queue\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLoadBalancer_ab760fa3ca28d71d52681a3a5b8e774ed}\label{classLoadBalancer_ab760fa3ca28d71d52681a3a5b8e774ed}} 
+\index{LoadBalancer@{LoadBalancer}!server\_id\_counter@{server\_id\_counter}}
+\index{server\_id\_counter@{server\_id\_counter}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{server\_id\_counter}{server\_id\_counter}}
+{\footnotesize\ttfamily size\+\_\+t Load\+Balancer\+::server\+\_\+id\+\_\+counter = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLoadBalancer_a61f268e9253aae191233de20d7c3ef5f}\label{classLoadBalancer_a61f268e9253aae191233de20d7c3ef5f}} 
+\index{LoadBalancer@{LoadBalancer}!servers@{servers}}
+\index{servers@{servers}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{servers}{servers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classServer}{Server}}$>$ Load\+Balancer\+::servers\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLoadBalancer_a50bfcb47447c86f4f606c923dd1df317}\label{classLoadBalancer_a50bfcb47447c86f4f606c923dd1df317}} 
+\index{LoadBalancer@{LoadBalancer}!servers\_created@{servers\_created}}
+\index{servers\_created@{servers\_created}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{servers\_created}{servers\_created}}
+{\footnotesize\ttfamily size\+\_\+t Load\+Balancer\+::servers\+\_\+created = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLoadBalancer_a15baa7f91db32f3883a01738edbe48c4}\label{classLoadBalancer_a15baa7f91db32f3883a01738edbe48c4}} 
+\index{LoadBalancer@{LoadBalancer}!servers\_removed@{servers\_removed}}
+\index{servers\_removed@{servers\_removed}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{servers\_removed}{servers\_removed}}
+{\footnotesize\ttfamily size\+\_\+t Load\+Balancer\+::servers\+\_\+removed = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLoadBalancer_a15c1f59b9a14dbfa25b40d642e629512}\label{classLoadBalancer_a15c1f59b9a14dbfa25b40d642e629512}} 
+\index{LoadBalancer@{LoadBalancer}!total\_requests@{total\_requests}}
+\index{total\_requests@{total\_requests}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{total\_requests}{total\_requests}}
+{\footnotesize\ttfamily size\+\_\+t Load\+Balancer\+::total\+\_\+requests = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{LoadBalancer_8h}{Load\+Balancer.\+h}}\end{DoxyCompactItemize}
