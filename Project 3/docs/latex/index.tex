@@ -1,0 +1,25 @@
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+ \hypertarget{index_autotoc_md1}{}\doxysection{Project Description}\label{index_autotoc_md1}
+This project simulates a load balancer system designed to manage server resources dynamically, handle incoming requests, and log system events. The simulation includes the following features\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Logging}}\+: Detailed event logging for load balancers and servers.
+\item {\bfseries{Dynamic \mbox{\hyperlink{classServer}{Server}} Management}}\+: Servers are added or removed based on the request queue size.
+\item {\bfseries{IP Blocking}}\+: Requests from specific IP addresses can be blocked.
+\item {\bfseries{Job Routing}}\+: Requests are routed to different load balancers based on job type (e.\+g., streaming or processing).
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{Key Components}\label{index_autotoc_md2}
+
+\begin{DoxyItemize}
+\item {\bfseries{\mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}}}}\+: Manages servers, processes requests, and dynamically adjusts server count.
+\item {\bfseries{\mbox{\hyperlink{classServer}{Server}}}}\+: Represents individual servers that process requests.
+\item {\bfseries{\mbox{\hyperlink{classSwitch}{Switch}}}}\+: Routes requests to appropriate load balancers and manages their operations.
+\item {\bfseries{\mbox{\hyperlink{structRequest}{Request}}}}\+: Represents a single request with attributes like IP addresses, job type, and processing time.
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{How to Run}\label{index_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item Compile the project using the provided Makefile.
+\item Run the simulation and provide runtime parameters (e.\+g., number of servers, clock cycles).
+\item View the generated logs and statistics for analysis. 
+\end{DoxyEnumerate}

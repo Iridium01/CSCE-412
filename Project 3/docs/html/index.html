@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AethelCloud Load Balancer Simulation: Main Page</title>
+<title>AethelCloud Load Balancer Simulation: Load Balancer Simulation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,6 +23,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AethelCloud Load Balancer Simulation
    </div>
+   <div id="projectbrief">A simulation of a load balancer system with logging, dynamic server management, and job routing.</div>
   </td>
  </tr>
  </tbody>
@@ -60,11 +61,37 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">AethelCloud Load Balancer Simulation Documentation</div>  </div>
+<div class="title">Load Balancer Simulation </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a> </p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Project Description</h1>
+<p>This project simulates a load balancer system designed to manage server resources dynamically, handle incoming requests, and log system events. The simulation includes the following features:</p>
+<ul>
+<li><b>Logging</b>: Detailed event logging for load balancers and servers.</li>
+<li><b>Dynamic <a class="el" href="classServer.html" title="Represents a server that processes requests.">Server</a> Management</b>: Servers are added or removed based on the request queue size.</li>
+<li><b>IP Blocking</b>: Requests from specific IP addresses can be blocked.</li>
+<li><b>Job Routing</b>: Requests are routed to different load balancers based on job type (e.g., streaming or processing).</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Key Components</h1>
+<ul>
+<li><b><a class="el" href="classLoadBalancer.html" title="Manages servers and request queues, dynamically adjusts server count, and logs events.">LoadBalancer</a></b>: Manages servers, processes requests, and dynamically adjusts server count.</li>
+<li><b><a class="el" href="classServer.html" title="Represents a server that processes requests.">Server</a></b>: Represents individual servers that process requests.</li>
+<li><b><a class="el" href="classSwitch.html" title="Routes requests to appropriate load balancers and manages their operations.">Switch</a></b>: Routes requests to appropriate load balancers and manages their operations.</li>
+<li><b><a class="el" href="structRequest.html" title="Represents a request with input/output IPs, processing time, and job type.">Request</a></b>: Represents a single request with attributes like IP addresses, job type, and processing time.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+How to Run</h1>
+<ol type="1">
+<li>Compile the project using the provided Makefile.</li>
+<li>Run the simulation and provide runtime parameters (e.g., number of servers, clock cycles).</li>
+<li>View the generated logs and statistics for analysis. </li>
+</ol>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
