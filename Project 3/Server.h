@@ -40,7 +40,7 @@ class Server {
             if (is_busy) {
                 remaining_time--;
                 if (remaining_time <= 0) {
-                    is_busy = false; // Request is complete
+                    is_busy = false;
                     std::string event_desc = "Completed request (" + std::string(1, current_request.job_type) + " " + std::to_string(current_request.time) + "ms)";
                     log_event(clock_cycle, event_desc);
                 }
@@ -52,7 +52,7 @@ class Server {
         }
 
         std::string get_id() const {
-            return id; // Return the server's unique ID
+            return id;
         }
 };
 
