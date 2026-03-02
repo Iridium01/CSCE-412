@@ -8,6 +8,15 @@
 
 using namespace std;
 
+/**
+ * @file main.cpp
+ * @brief Entry point for the Load Balancer simulation.
+ */
+
+/**
+ * @brief Main function to run the simulation.
+ * @return int Exit status of the program.
+ */
 int main() {
     // Parse the config file
     mINI::INIFile file("config.ini");
@@ -55,6 +64,9 @@ int main() {
 
     cout << "Added " << num_servers * 100 << " initial requests to the load balancer." << endl;
 
+    /**
+     * @brief Starts the simulation loop for the specified runtime.
+     */
     // Adjust the simulation loop to use user-defined runtime
     cout << "Starting simulation for " << runtime << " clock cycles..." << endl;
 

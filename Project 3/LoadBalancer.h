@@ -10,6 +10,10 @@
 #include <string>
 #include <algorithm>
 
+/**
+ * @class LoadBalancer
+ * @brief Manages servers and request queues, dynamically adjusts server count, and logs events.
+ */
 class LoadBalancer {
     private:
         // functional variables
@@ -29,7 +33,11 @@ class LoadBalancer {
         size_t servers_removed = 0;
         size_t max_servers = 0;
 
-        // helper function to write LB events to file
+        /**
+         * @brief Logs an event to the output log file.
+         * @param clock_cycle The current clock cycle.
+         * @param action Description of the event.
+         */
         void log_event(int clock_cycle, const std::string& action) {
             std::ofstream of(output_log, std::ios::app);
             of << clock_cycle << ": [LoadBalancer " << std::left << std::setw(10) << id << "] " << action << '\n';
@@ -38,6 +46,11 @@ class LoadBalancer {
 
         // helper function to add servers at initialization
         // and dynamically during simulation
+        /**
+         * @brief Adds a new server to the load balancer.
+         * @param clock_cycle The current clock cycle.
+         * @details The server ID is generated based on the load balancer type (streaming or processing) and a counter.
+         */
         void add_server(int clock_cycle) {
             std::string server_id;
             if (id == "stream_lb") {
@@ -57,6 +70,11 @@ class LoadBalancer {
         
         // helper function to dynamically remove servers during simulation
         // should only remove the first inactive server
+        /**
+         * @brief Removes an inactive server from the load balancer.
+         * @param clock_cycle The current clock cycle.
+         * @details The function iterates through the list of servers and removes the first one that is not busy.
+         */
         void remove_server(int clock_cycle) {
             for (size_t i = 0; i < servers.size(); i++) {
                 if (servers[i].is_free()) {
@@ -73,6 +91,12 @@ class LoadBalancer {
         }
 
     public:
+        /**
+         * @brief Constructs a LoadBalancer with the given ID and initial servers.
+         * @param id Unique identifier for the load balancer.
+         * @param initial_servers Number of servers to initialize.
+         * @param log_file Path to the log file.
+         */
         LoadBalancer(const std::string id, size_t initial_servers, const std::string& log_file = "output_log.txt")
             : id(id)
             , output_log(log_file) {
@@ -83,6 +107,12 @@ class LoadBalancer {
             }
         }
 
+        /**
+         * @brief Adds a request to the load balancer's queue.
+         * @param req The request to add.
+         * @param clock_cycle The current clock cycle.
+         * @details If the request's source IP is in the blocked list, it will be rejected. Otherwise it is added to the queue.
+         */
         void add_request(const Request& req, int clock_cycle) {
             if (std::find(blocked_ips.begin(), blocked_ips.end(), req.ip_in) != blocked_ips.end()) {
                 std::string event_desc = "Blocked request (" + std::string(1, req.job_type) + " " + std::to_string(req.time) + "ms) from IP: " + req.ip_in;
@@ -98,7 +128,12 @@ class LoadBalancer {
             std::string event_desc = "Request (" + std::string(1, req.job_type) + " " + std::to_string(req.time) + "ms) added";
             log_event(clock_cycle, event_desc);
         }
-
+        
+        /**
+         * @brief Advances the simulation by one clock cycle, processing requests and adjusting servers as needed.
+         * @param clock_cycle The current clock cycle.
+         * @details The function checks each server for availability and assigns requests from the queue. It also dynamically adds or removes servers based on the queue size and current server count, with a cooldown period of 10 cycles to prevent rapid fluctuations.
+         */
         void tick(int clock_cycle) {
             // Assign tasks and increment clock time for all servers
             for (auto& server : servers) {
@@ -134,6 +169,10 @@ class LoadBalancer {
             }
         }
 
+        /**
+         * @brief Print statistics for the load balancer to a file.
+         * @param stats_file An open ofstream to write the statistics to.
+         */
         void update_stats(std::ofstream& stats_file) {
             if (stats_file.is_open()) {
                 stats_file << "Load Balancer ID:    " << id << "\n";
@@ -148,6 +187,11 @@ class LoadBalancer {
             }
         }
 
+        /**
+         * @brief Blocks an IP address in both load balancers.
+         * @param ip The IP address to block.
+         * @param clock_cycle The current clock cycle.
+         */
         void block_ip(const std::string& ip, int clock_cycle) {
             blocked_ips.push_back(ip);
 
