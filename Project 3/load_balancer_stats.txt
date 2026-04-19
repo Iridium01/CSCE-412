@@ -1,0 +1,20 @@
+Load Balancer ID:    stream_lb
+Start queue size:    0
+End queue size:      0
+Min request time:    2147483647ms
+Max request time:    0ms
+Avg request time:    -nanms
+Servers Created:     10
+Servers Removed:     9
+Max Servers Running: 10
+
+Load Balancer ID:    process_lb
+Start queue size:    0
+End queue size:      0
+Min request time:    2147483647ms
+Max request time:    0ms
+Avg request time:    -nanms
+Servers Created:     10
+Servers Removed:     9
+Max Servers Running: 10
+

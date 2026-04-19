@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link id="css_style" rel="stylesheet" href="./theme1.css" />
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .header {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .header .logo {
+            max-width: 50px;
+            max-height: 50px;
+            margin-right: 10px;
+        }
+
+        .diagram {
+            width: 50%;
+            height: auto;
+        }
+
+        .diagram-description {
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src = "./logo.png" alt="aethel-cloud-logo" class="logo">
+        <h1>AethelCloud Load Balancer Details</h1>
+    </div>
+
+    <div class="project-header">
+        <h1>Diagram</h1>
+        <img class="diagram" src="./diagram-export-2-15-2026-7_09_03-PM.png">
+        <p class="diagram-description">The AethelCloud load balancer high-level design is above. As a request comes into the load balancer, the balancer polls each web server to find the one with the shortest queue, and then sends the request to that server. When the server is done processing each request, it sends any statistics and logs to the Metrics Logger, then updates its queue and status for the load balancer. While the servers and load balancer are running, periodic metrics are sent from the Metrics Logger back to the load balancer for output. If the balancer detects all server queues are getting full, it will dynamically start new servers, or stop unused servers if queues are really short. After all requests are processed, a final log is created.</p>
+    </div>
+    
+</body>
+</html>
